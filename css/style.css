@@ -49,3 +49,18 @@ body {
     transform: translate(-50%, -55%);
 }
 
+.header-description h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 500%;
+    color: #3ad6a2;
+}
+.logo {
+    font-family: 'Lobster', cursive;
+    color: #000;
+    font-size: 200%;
+}
+
+.logo:hover {
+    color: #000;
+}
+
