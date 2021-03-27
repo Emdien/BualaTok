@@ -4,7 +4,7 @@ body {
     background: #fff;
 }
 .navbar {
-    background:#71f5c9;
+    background:#71e6f5;
 }
 .nav-link,
 .navbar-brand {
@@ -33,6 +33,13 @@ body {
     margin-bottom: 16px;
 }
 
+.index-header {
+    background-image: url('../images/1496404.png');
+    background-size: cover;
+    background-position: 0% 25%;
+    position: relative;
+}
+
 .header-dim {
     position: absolute;
     min-height: 100%;
@@ -44,7 +51,7 @@ body {
 
 .header-description {
     position: absolute;
-    top: 45%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -55%);
 }
@@ -52,8 +59,9 @@ body {
 .header-description h1 {
     font-family: 'Lobster', cursive;
     font-size: 500%;
-    color: #3ad6a2;
+    color: #3ad1d6;
 }
+
 .logo {
     font-family: 'Lobster', cursive;
     color: #000;
@@ -64,3 +72,29 @@ body {
     color: #000;
 }
 
+.login-form .container {
+    max-width: 350px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}
+
+.login-form label {
+    color: #fff;
+}
+
+.login-form button {
+    max-width: 150px;
+    
+}
+
+.footer-copyright .container {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    /*color:  #26ebf1;*/
+    color: #fff;
+
+}
