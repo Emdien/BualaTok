@@ -3,5 +3,5 @@ var ready = (callback) => {
     else document.addEventListener("DOMContentLoaded", callback);
 }
 ready(() => {
-    document.querySelector(".header").style.height = window.innerHeight / 3 + "px";
+    document.querySelector(".header").style.height = window.innerHeight / 4 + "px";
 })
