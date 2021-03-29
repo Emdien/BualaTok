@@ -11,18 +11,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
+        
 
         
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-md navbar-light">
             <a href="index.html" class="navbar-brand col-auto logo mr-lg-5">BualaTok</a>
             <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#main-navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse align-items-center" id="main-navigation">
                 <div class="container">
-                    <form class="col-auto col-lg-12 mb-3 mb-lg-0 me-lg-3">
-                        <input type="search" class="form-control form-control-dark" placeholder="Search...">
+                    <form class="col-auto col-lg-12 mb-0 mb-lg-0 me-lg-3">
+                        <input type="search" class="form-control form-control-dark d-sm-none d-md-flex" placeholder="Search...">
                     </form>
                 </div>
                 
@@ -48,7 +49,7 @@
             <div class="flex-shrink-0 dropdown ">
                 
                 <a href="#" class="d-block text-dark link-dark text-decoration-none dropdown-toggle pt-1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    #Username_
+                    #Username
                     <img src="images/fg-avatar-anonymous-user-retina.png" alt="user" width="32" height="32" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -67,6 +68,67 @@
             </div>
         </header>
 
+        <div class="container pt-3">
+            <h2 class="text-center">Categorías mas populares</h2>
+            <div class="row text-center mt-5">
+                <div class="col-lg-2 col-12 card_cat">
+                    <img src="images/coupe-car.svg" alt="car" height="100" width="100">
+                    <div>
+                        <a href="#" class="text-decoration-none link-dark text-dark">Vehículos</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12 card_cat">
+                    <img src="images/playstation.svg" alt="car" height="100" width="100">
+                    <div>
+                        <a href="#" class="text-decoration-none link-dark text-dark">Videojuegos</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12 card_cat">
+                    <img src="images/tshirt.svg" alt="car" height="100" width="100">
+                    <div>
+                        <a href="#" class="text-decoration-none link-dark text-dark">Ropa</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12 card_cat">
+                    <img src="images/laptop.svg" alt="car" height="100" width="100">
+                    <div>
+                        <a href="#" class="text-decoration-none link-dark text-dark">Ordenadores</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12 card_cat">
+                    <img src="images/smartphone.svg" alt="car" height="100" width="100">
+                    <div>
+                        <a href="#" class="text-decoration-none link-dark text-dark">Dispositivos móviles</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12 card_cat">
+                    <img src="images/tv.svg" alt="car" height="100" width="100">
+                    <div>
+                        <a href="#" class="text-decoration-none link-dark text-dark">TV, Audio y Foto</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <footer class="footer mt-auto py-3 bg-light">
+            <div class="container text-center">
+
+                    <div class="container text-center">
+                        © 2021 Copyright: lol - Created by Gonzalo Nicolas (Emdien) -
+                        <a href="https://github.com/Emdien" target="_blank">My github</a>
+                    </div>  
+                    <div class="container text-center">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+            </div>
+        </footer>
+          <!-- 
+        <footer class="footer"> 
+            <div class="container text-center">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+-->
+        
         <script src="js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
