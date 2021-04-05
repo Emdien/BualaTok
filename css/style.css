@@ -62,6 +62,19 @@ body {
     color: #3ad1d6;
 }
 
+.r-header-description {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+
+.r-header-description h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 500%;
+    color: #3ad1d6;
+}
+
 .logo {
     font-family: 'Lobster', cursive;
     color: #000;
@@ -87,6 +100,23 @@ body {
 .login-form button {
     max-width: 150px;
     
+}
+
+.register-form .container {
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.75);
+    /*border: 2px solid #2da4a8;*/
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.register-form label {
+    color: black;
 }
 
 .footer-copyright .container {
