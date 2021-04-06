@@ -159,3 +159,12 @@ body {
     border: 1px solid #cccccc;
     background-color: white;
 }
+
+.search-result {
+    min-height: 700px;
+    max-height: 700px;
+    overflow: auto;
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 10px;
+
+}
