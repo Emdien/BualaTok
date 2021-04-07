@@ -162,9 +162,15 @@ body {
 
 .search-result {
     min-height: 700px;
-    max-height: 700px;
-    overflow: auto;
-    border: 1px solid rgb(153, 153, 153);
-    border-radius: 10px;
+}
 
+.search-result .card_cat {
+    max-width: none;
+    min-height: 250px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.rounded-input {
+    border-radius: 1em;
 }

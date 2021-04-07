@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse align-items-center" id="main-navigation">
                 <div class="container">
                     <form class="col-auto col-lg-12 mb-0 mb-lg-0 me-lg-3">
-                        <input type="search" class="form-control form-control-dark d-none d-lg-flex d-xl-flex" placeholder="Search...">
+                        <input type="search" class="form-control form-control-dark d-none d-lg-flex d-xl-flex  rounded-input" placeholder="Search...">
                     </form>
                 </div>
                 
@@ -64,13 +64,13 @@
                <div class="form-row">
                     <div class="form-group col-12 mb-1">
                        <label for="inputPNombre" class="">Nombre de producto</label>
-                       <input type="search" class="form-control form-control-sm" id="inputPNombre">
+                       <input type="search" class="form-control form-control-sm rounded-input" id="inputPNombre">
                     </div>
                </div>
                <div class="form-row">
                     <div class="form-group col-12 col-sm-3 mb-1">
                         <label for="inputPEstado" class="">Estado</label>
-                        <select  id="inputPEstado" class="form-control form-control-sm">
+                        <select  id="inputPEstado" class="form-control form-control-sm rounded-input">
                             <option selected></option>
                             <option>Nuevo</option>
                             <option>Bueno</option>
@@ -79,28 +79,102 @@
                     </div>
                     <div class="form-group col-6 col-sm-2 mb-1">
                         <label for="inputPMin" class="">Precio mínimo</label>
-                        <input type="number" min="0" step="any" class="form-control form-control-sm" id="inputPMin" placeholder="1.0">
+                        <input type="number" min="0" step="any" class="form-control form-control-sm rounded-input" id="inputPMin" placeholder="1.0">
                     </div>
                     <div class="form-group col-6 col-sm-2 mb-1">
                         <label for="inputPMax" class="">Precio máximo</label>
-                        <input type="number" min="0" step="any" class="form-control form-control-sm" id="inputPMax" placeholder="1000.0"> 
+                        <input type="number" min="0" step="any" class="form-control form-control-sm rounded-input" id="inputPMax" placeholder="1000.0"> 
                     </div>
                     <div class="form-group  col-12 col-sm-5 mb-1">
                         <label for="inputPCategoria" class="">Categoría</label>
-                        <input type="search" class="form-control form-control-sm" id="inputPCategoria">
+                        <input type="search" class="form-control form-control-sm rounded-input" id="inputPCategoria">
                     </div>
                </div>
                <div class="form-row">
                    <div class="form-group col-12 col-sm-2 mb-1 mt-1">
-                        <button type="submit" name="buscar" value="" class="btn btn-primary btn-block">Buscar</button>
+                        <button type="submit" name="buscar" value="" class="btn btn-primary btn-block rounded-input">Buscar</button>
                    </div>
 
                </div>
            </form>
         </div>
 
-        <div class="container pt-3 mb-3 mt-3 shadow bg-light search-result">
+        <div class="container-fluid mb-3 mt-3 shadow bg-light border-top">
+            <div class="container mb-3 mt-3 bg-light search-result">
 
+                <!-- Ejemplos de resultados de búsqueda. Mockup -->
+                <a href="" class="text-decoration-none text-dark">
+                    <div class="card_cat mb-2 ">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <img src="images/placeholder-image.png" width="280" height="180" alt="">
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <p><strong>Producto X - Precio: Y€</strong></p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla eveniet nam ad officia cumque esse veniam impedit, illo omnis error doloremque nihil ullam laborum nesciunt odio ducimus! Omnis, recusandae soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+
+                <a href="" class="text-decoration-none text-dark">
+                    <div class="card_cat mb-2 ">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <img src="images/placeholder-image.png" width="280" height="180" alt="">
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <p><strong>Producto X - Precio: Y€</strong></p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla eveniet nam ad officia cumque esse veniam impedit, illo omnis error doloremque nihil ullam laborum nesciunt odio ducimus! Omnis, recusandae soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="" class="text-decoration-none text-dark">
+                    <div class="card_cat mb-2 ">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <img src="images/placeholder-image.png" width="280" height="180" alt="">
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <p><strong>Producto X - Precio: Y€</strong></p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla eveniet nam ad officia cumque esse veniam impedit, illo omnis error doloremque nihil ullam laborum nesciunt odio ducimus! Omnis, recusandae soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="" class="text-decoration-none text-dark">
+                    <div class="card_cat mb-2 ">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <img src="images/placeholder-image.png" width="280" height="180" alt="">
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <p><strong>Producto X - Precio: Y€</strong></p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla eveniet nam ad officia cumque esse veniam impedit, illo omnis error doloremque nihil ullam laborum nesciunt odio ducimus! Omnis, recusandae soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="" class="text-decoration-none text-dark">
+                    <div class="card_cat mb-2 ">
+                        <div class="row">
+                            <div class="col-12 col-sm-4">
+                                <img src="images/placeholder-image.png" width="280" height="180" alt="">
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <p><strong>Producto X - Precio: Y€</strong></p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla eveniet nam ad officia cumque esse veniam impedit, illo omnis error doloremque nihil ullam laborum nesciunt odio ducimus! Omnis, recusandae soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
 
         </div>
 
