@@ -174,3 +174,8 @@ body {
 .rounded-input {
     border-radius: 1em;
 }
+
+.product-register-img {
+    max-height: 400px;
+    min-height: 400px;
+}
