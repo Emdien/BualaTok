@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var conexion = require('../connection');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index', {error : ''});
 });
 
 var users = {
@@ -17,29 +18,18 @@ router.post('/', function(req, res, next) {
   var email = req.body.email;
   var password = req.body.password;
   
-  // MODIFICAR PARA HACER CONEXIÓN CON MYSQL
-
-
-  if (email && password) {
-    var user = users[email];
-    if (user) {
-      if (password == user['password']){
-        req.session.loggedin = true;
-        req.session.username = email; // En vez del email, guardar un objeto usuario.
-        res.redirect('/home');
-      } else {
-        res.send('Incorrect username or password')
-      } 
-    }  else {
-      res.send('Incorrect username or password')
+  console.log('ANTES DE QUERY');
+  // MODIFICAR PARA HACER CONEXIÓN CON MYSQ
+  conexion.query('SELECT * FROM usuarios WHERE `email` = ? AND `password` = ?', [email, password], function(err, results) {
+    console.log(results);
+    if (results.length) {
+      req.session.loggedin = true;
+      req.session.user = results[0];
+      res.redirect('home')
+    } else {
+      res.render('index', {error : 'Usuario o contraseña erroneos'})
     }
-    
-    res.end();
-    
-  } else {
-    res.send('Enter user and password')
-    res.end();
-  } 
+  })
 });
 
 module.exports = router;

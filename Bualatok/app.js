@@ -10,7 +10,6 @@ var usersRouter = require('./routes/home');
 
 var app = express();
 
-//app.engine('.html', require('ejs').__express)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
