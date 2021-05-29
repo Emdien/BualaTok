@@ -18,7 +18,6 @@ router.post('/', function(req, res, next) {
   var email = req.body.email;
   var password = req.body.password;
   
-  console.log('ANTES DE QUERY');
   // MODIFICAR PARA HACER CONEXIÓN CON MYSQ
   conexion.query('SELECT * FROM usuarios WHERE `email` = ? AND `password` = ?', [email, password], function(err, results) {
     console.log(results);
