@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var conexion = require('../connection');
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  if (req.session.loggedin) {
-    res.render('main', req.session.user);
-  } else {
+
+    req.session.destroy();
     res.redirect('/');
-  }
+  
 });
 
 module.exports = router;

@@ -15,8 +15,6 @@ router.post('/', function(req, res, next) {
     var provincia = req.body.provincia;
     var credito = req.body.credito;
 
-    //var sql = "INSERT INTO usuarios (nombre, apellidos, username, email, password, provincia, credito) VALUES ('" + nombre + "','" + apellidos + "','" + username + "','" + email + "','" + password + "','" + provincia + "','" + credito + "')"
-    //var sql = "INSERT INTO usuarios(nombre, apellidos, username, email, password) VALUES ('test2', 'test2', 'test2', 'test2@um.es', 12345)";
     conexion.query("INSERT INTO usuarios (nombre, apellidos, username, email, password, provincia, credito) VALUES (?,?,?,?,?,?,?)", 
     [nombre, apellidos, username, email, password, provincia, credito] ,function(err, results) {
         if (!err) {
