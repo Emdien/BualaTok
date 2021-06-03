@@ -179,3 +179,12 @@ body {
     max-height: 300px;
     min-height: 300px;
 }
+
+.product-card {
+    max-height: 500px;
+}
+
+.product-card p {
+    max-height: 190px;
+    overflow: auto;
+}

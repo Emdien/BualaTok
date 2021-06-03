@@ -50,7 +50,7 @@
             <div class="flex-shrink-0 dropdown mr-4 ">
                 
                 <a href="#" class="d-block text-dark link-dark text-decoration-none dropdown-toggle pt-1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{username}}
+                    {{user.username}}
                     <img src="images/fg-avatar-anonymous-user-retina.png" alt="user" width="32" height="32" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -103,7 +103,36 @@
         <div class="container-fluid mb-3 mt-3 shadow bg-light border-top">
             <div class="container mb-3 mt-3 bg-light search-result">
 
-                <!-- Ejemplos de resultados de búsqueda. Mockup -->
+
+                {{#each productos}}
+                   <div class="card_cat mb-2 product-card">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <img src="{{foto}}" class="img-fluid product-register-img">
+                        </div>
+                        <div class="col-12 col-sm-6 text-justify">
+                            <p><strong>{{nombre}} - Precio: {{precio}}€</strong></p>
+                            <p>{{descripcion}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-2 offset-sm-4 mb-2">
+                                <button type="submit" name="" value="" class="btn btn-primary btn-block" data-toggle="modal" data-target="#buyModal">Comprar</button>
+                        </div>
+                        <div class="col-12 col-sm-2 mb-2">
+                            <form action="" method="GET">
+                                <button type="submit" name="trade" value="product_id" class="btn btn-info btn-block">Cambiar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+
+                {{/each}}
+
+
+
+
+                <!-- Ejemplos de resultados de búsqueda. Mockup 
                 <div class="card_cat mb-2 ">
                     <div class="row">
                         <div class="col-12 col-sm-4">
@@ -212,7 +241,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

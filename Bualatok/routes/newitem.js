@@ -28,9 +28,9 @@ router.post('/', function(req, res, next) {
     let imagen = req.files.file;
     let fecha = new Date();
     let visualizaciones = 0;
-    imagen.mv('./uploads/' + imagen.name);
+    imagen.mv('public/uploads/' + imagen.name);
 
-    let img_path = './uploads/' + imagen.name;
+    let img_path = 'uploads/' + imagen.name;
 
     conexion.query("INSERT INTO productos (nombre, precio, descripcion, foto, fecha, categoria, estado, visualizaciones, propietario) VALUES (?,?,?,?,?,?,?,?,?)", 
     [nombre, precio, descripcion, img_path, fecha.toDateString(), categoria, estado, visualizaciones, req.session.user.idusuario] ,function(err, results) {
