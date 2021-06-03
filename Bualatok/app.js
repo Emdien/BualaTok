@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var fileUpload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
@@ -27,9 +28,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'secret',
   resave: false,
-  saveUninitialized: true,
-
+  saveUninitialized: true
 }));
+
+app.use(fileUpload({
+  createParentPath: true
+}));
+
+
 
 
 

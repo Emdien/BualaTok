@@ -65,15 +65,15 @@
         <div class="container border border-dark rounded bg-light mt-5 pt-3 mb-5">
             <h2 class="text-center font-weight-bold">Registrar Producto</h2>
             <div class="container">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-12 mb-2">
                             <label for="inputPNombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="inputPNombre">
+                            <input type="text" class="form-control" id="inputPNombre" name="nombre">
                         </div>
                         <div class="form-group col-12 mb-2">
                             <label for="textPDesc" class="form-label">Descripción</label>
-                            <textarea name="descripcion" id="textPDesc" rows="5" class="form-control"></textarea>
+                            <textarea name="descripcion" id="textPDesc" rows="5" class="form-control" name="descripcion"></textarea>
                         </div>
                     </div>
                     <div class="form-row">
@@ -81,7 +81,7 @@
                             <div class="form-row">
                                 <div class="form-group col-12 col-sm-10 mb-2">
                                     <label for="inputPCategoria" class="form-label">Categoria</label>
-                                    <select name="categoria" id="inputPCategoria" class="form-control">
+                                    <select name="categoria" id="inputPCategoria" class="form-control" name="categoria">
                                         <option selected>Categorias</option>
                                         <option value="1">...</option>
                                         <option value="2">...</option>
@@ -93,7 +93,7 @@
                             <div class="form-row">
                                 <div class="form-group col-12 col-sm-10 mb-2">
                                     <label for="inputPPrecio" class="form-label">Precio</label>
-                                    <input type="number" class="form-control" id="inputPPrecio">
+                                    <input type="number" class="form-control" id="inputPPrecio" name="precio">
                                 </div>
                             </div>
 
@@ -102,19 +102,19 @@
                                     <fieldset>
                                         <label class="form-label">Estado del producto</label>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="estados" id="estadoNuevo" value="nuevo" checked>
+                                            <input class="form-check-input" type="radio" name="estado" id="estadoNuevo" value="nuevo" checked>
                                             <label class="form-check-label" for="estadoNuevo">
                                                 Nuevo
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="estados" id="estadoBueno" value="bueno">
+                                            <input class="form-check-input" type="radio" name="estado" id="estadoBueno" value="bueno">
                                             <label class="form-check-label" for="estadoBueno">
                                                 Bueno
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="estados" id="estadoMalo" value="malo">
+                                            <input class="form-check-input" type="radio" name="estado" id="estadoMalo" value="malo">
                                             <label class="form-check-label" for="estadoMalo">
                                                 Malo
                                             </label>
