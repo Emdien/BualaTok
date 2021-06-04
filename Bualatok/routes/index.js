@@ -19,7 +19,6 @@ router.post('/', function(req, res, next) {
   var password = req.body.password;
   
   conexion.query('SELECT * FROM usuarios WHERE `email` = ? AND `password` = ?', [email, password], function(err, results) {
-    console.log(results);
     if (results.length) {
       req.session.loggedin = true;
       req.session.user = results[0];
