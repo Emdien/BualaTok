@@ -2,34 +2,14 @@ var express = require('express');
 var conexion = require('../connection');
 var router = express.Router();
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   if (req.session.loggedin) {
 
-
     let productos = [];
-
-
     let query = 'SELECT * FROM productos';
-
-
     let first_value = true;
 
-    /*if (nombre != null && nombre != undefined && nombre != "") {
-      
-      if (first_value) {
-        query += 'nombre = "' + conexion.escape(nombre) + '" ';
-        first_value = true;
-      } else {
-        query += 'AND nombre = "' + conexion.escape(nombre) + '" ';
-      }
-    }*/
-
-
-
-
     Object.getOwnPropertyNames(req.query).forEach(function(val, index, array) {
-      console.log(val + ": " + req.query[val]);
       if (req.query[val] != null && req.query[val] != undefined && req.query[val] != "") {
         
         if (first_value){
@@ -61,11 +41,6 @@ router.get('/', function(req, res, next) {
     })
 
     query = query.trim();
-
-    console.log(query);
-
-
-
 
     conexion.query(query, function(err, results) {
       if (results.length) {

@@ -12,6 +12,7 @@ var registerRouter = require('./routes/register');
 var logoutRouter = require('./routes/logout');
 var searchRouter = require('./routes/search');
 var newItemRouter = require('./routes/newitem');
+var itemListRouter = require('./routes/itemlist');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/register', registerRouter);
 app.use('/logout', logoutRouter);
 app.use('/search', searchRouter);
 app.use('/newitem', newItemRouter);
+app.use('/itemlist', itemListRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
