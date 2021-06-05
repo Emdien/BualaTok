@@ -60,67 +60,88 @@
               </div>
         </nav>
 
-        <header class="page-header header container-fluid text-center">
-            <div class="header-dim">
-                <div class="header-description text-light">
-                    <h1>BualaTok</h1>
-                    <p>La web para vender, comprar y cambiar lo que te sobra</p>
-                </div>
-            </div>
-        </header>
-
         <div class="container pt-3">
-            <h2 class="text-center">Categorías más populares</h2>
-            <div class="row text-center mt-5 justify-content-center">
-                <div class="col-lg-auto col-12 card_cat">
-                    <a href="#" class="text-decoration-none link-dark text-dark">
-                        <div>
-                            <img src="images/coupe-car.svg" alt="car" height="100" width="100">
-                        </div>
-                        Vehículos
-                    </a>
-                </div>
+            <div class="text-dark text-center font-weight-bold">
+                <h1>Opciones</h1>
+            </div>
+        </div>
 
-                <div class="col-lg-auto col-12 card_cat">
-                    <a href="#" class="text-decoration-none link-dark text-dark">
-                        <div>
-                            <img src="images/playstation.svg" alt="car" height="100" width="100">
+        <div class="container-fluid mb-3 mt-3 shadow bg-light border-top">
+            <div class="container mb-3 mt-3 bg-light search-result">
+                <form action="/settings/addcredito" method="POST">
+                    <h3>Añadir credito</h3><hr>
+                    <div class="form-row">
+                        <div class="form-group col-12 col-sm-4 mb-3">
+                            <label for="inputCredits" class="form-label">Creditos a añadir</label>
+                            <input type="number" min="0" step="any" class="form-control" id="inputCredits" name="credito">
                         </div>
-                        Videojuegos
-                    </a>
-                </div>
-                <div class="col-lg-auto col-12 card_cat">
-                    <a href="#" class="text-decoration-none link-dark text-dark">
-                        <div>
-                            <img src="images/tshirt.svg" alt="car" height="100" width="100">
+                        
+                    </div>
+                    <div class="col-12 col-sm-3 col-md-2 mb-4 pl-0 pr-0">
+                        <button type="submit" class="btn btn-primary btn-block">Añadir</button>
+                    </div>
+                </form>
+                <h3>Modificar cuenta de usuario</h3><hr>
+                <form action="/settings/modifyuser" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-sm-4 mb-2">
+                            <label for="inputNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputNombre" name="nombre" value="{{nombre}}">
                         </div>
-                        Ropa
-                    </a>
-                </div>
-                <div class="col-lg-auto col-12 card_cat">
-                    <a href="#" class="text-decoration-none link-dark text-dark">
-                        <div>
-                            <img src="images/laptop.svg" alt="car" height="100" width="100">
+                        <div class="form-group col-12 col-sm-5 mb-2">
+                            <label for="inputApellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="inputApellidos" name="apellidos" value="{{apellidos}}">
                         </div>
-                        Ordenadores
-                    </a>
-                </div>
-                <div class="col-lg-auto col-12 card_cat">
-                    <a href="#" class="text-decoration-none link-dark text-dark">
-                        <div>
-                            <img src="images/smartphone.svg" alt="car" height="100" width="100">
+                        <div class="form-group col-12 col-sm-3 mb-2">
+                            <label for="inputUsername" class="form-label">Provincia</label>
+                            <select id="inputProvincia" class="form-control" name="provincia">
+                                <option selected>Murcia</option>
+                                <option>...</option>
+                            </select>
                         </div>
-                        Dispositivos móviles
-                    </a>
-                </div>
-                <div class="col-lg-auto col-12 card_cat">
-                    <a href="#" class="text-decoration-none link-dark text-dark">
-                        <div>
-                            <img src="images/tv.svg" alt="car" height="100" width="100">
+                    </div>
+
+                    <div class="form-row mb-2">
+                        <div class="form-group col-12 col-sm-4 mb-2">
+                            <label for="inputUsername" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" id="inputUsername" name="username" value="{{username}}">
                         </div>
-                        TV, Audio y Foto
-                    </a>
-                </div>
+                        <div class="form-group col-12 col-sm-4 mb-2">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="email@xyz.com" name="email" value="{{email}}">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-3 col-md-2 mb-4 pl-0 pr-0">
+                        <button type="submit" class="btn btn-primary btn-block">Modificar</button>
+                    </div>
+                </form>
+
+                <h3>Cambiar contraseña</h3><hr>
+                <form action="/settings/password" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-sm-6 col-md-4 mb-2">
+                            <label for="inputCurrentPassword" class="form-label">Contraseña actual</label>
+                            <input type="password" class="form-control" id="inputCurrentPassword" name="currentpassword">
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-2">
+                        <div class="form-group col-12 col-sm-6 col-md-4 mb-2">
+                            <label for="inputPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="inputPassword" name="password">
+                        </div>
+                        <div class="form-group col-12 col-sm-6 col-md-4 mb-2">
+                            <label for="inputRPassword" class="form-label">Repetir contraseña</label>
+                            <input type="password" class="form-control" id="inputRPassword" name="rpassword">
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-12 col-sm-3 col-md-2 mb-4 pl-0 pr-0">
+                        <button type="submit" class="btn btn-primary btn-block">Cambiar contraseña</button>
+                    </div>
+                </form>
 
             </div>
         </div>
