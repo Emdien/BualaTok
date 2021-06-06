@@ -117,10 +117,46 @@ router.post('/modify-user', function(req, res, next) {
       })
 
     }
+  });
+
+});
+
+router.post('/password', function(req, res, next) {
+  let password = req.body.password;
+
+  let data = {
+    user : req.session.user
+  };
+
+  let query = 'UPDATE usuarios SET password = ' + conexion.escape(password) + ' WHERE idusuario = ' + req.session.user.idusuario;
+  conexion.query(query, function(err, results) {
+    if (err) {
+
+      console.log(err);
+      data.message = 'Error al actualizar la contraseña';
+      data.error = true;
+      
+      req.session.data = data;
+
+      res.redirect('/settings');
+
+
+    }
+    else {
+
+      data.message = 'Contraseña actualizada';
+      data.success = true;
+      req.session.user.password = password;
+
+      data.user = req.session.user;
+
+      console.log(data); 
+
+      req.session.data = data;
+
+      res.redirect('/settings');
+    }
   })
-
-
-
 
 })
 
