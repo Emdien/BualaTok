@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
   if (req.session.loggedin) {
     
     let data = req.session.data;
-    console.log(data);
     
     let newData = {
       user : req.session.user,
@@ -36,8 +35,7 @@ router.post('/addcredito', function(req, res, next) {
   req.session.user.credito = credito;
   let data = {
     user : req.session.user,
-    message : 'Credito actualizado',
-    success : true
+    message : '',
   };
 
   let query = 'UPDATE usuarios SET credito = ' + credito + ' WHERE idusuario = ' + req.session.user.idusuario;
@@ -46,13 +44,83 @@ router.post('/addcredito', function(req, res, next) {
     if (err) {
       console.log(err);
       data.message = 'Ha ocurrido un error';
-      data.success = false;
+      data.error = true;
+
+      req.session.data = data;
+
+      res.redirect('/settings');
+      
     } 
+    else {
+      data.message = 'Credito actualizado';
+      data.success = true;
+
+      req.session.data = data;
+
+      res.redirect('/settings');
+    }
   });
 
-  req.session.data = data;
+ 
 
-  res.redirect('/settings');
+});
+
+
+router.post('/modify-user', function(req, res, next) {
+  let nombre = req.body.nombre;
+  let apellidos = req.body.apellidos;
+  let provincia = req.body.provincia;
+  let username = req.body.username;
+  let email = req.body.email;
+
+  // Comprobación de si están vacios se hace en el cliente ??
+
+  var data = {
+    user : req.session.user,
+    message : '',
+  };
+
+  let query = 'UPDATE usuarios SET nombre = ' + conexion.escape(nombre) + ', apellidos = ' + conexion.escape(apellidos) + ', provincia = ' + conexion.escape(provincia) + ', username = ' + conexion.escape(username) + ', email = ' + conexion.escape(email) + ' WHERE idusuario = ' + req.session.user.idusuario;
+  console.log(query);
+  conexion.query(query, function(err, results) {
+    if (err) {
+      console.log("Error al actualizar la informacion")
+      console.log(err);
+      data.message = 'Error al actualizar la información'
+      data.error = true;
+
+      req.session.data = data;
+
+      console.log(data);
+    
+      res.redirect('/settings')
+
+    } 
+    else {
+
+      let query = 'SELECT * FROM usuarios WHERE idusuario = ' + req.session.user.idusuario;
+      conexion.query(query, function(err, results) {
+        if (results.length) {
+
+          req.session.user = results[0];
+          data.user = req.session.user;
+          data.message = 'Información del usuario actualizada';
+          data.success = true;
+
+          req.session.data = data;
+
+          console.log(data);
+        
+          res.redirect('/settings')
+  
+        }
+      })
+
+    }
+  })
+
+
+
 
 })
 
