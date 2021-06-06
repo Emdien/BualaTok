@@ -66,7 +66,7 @@ router.get('/', function(req, res, next) {
 router.post('/buyitem', function(req, res, next) {
   
   let productId = req.body.idproducto;
-  console.log(productId);
+  //console.log(productId);
 
   let product;
   let query = 'SELECT * FROM productos WHERE idproducto = '+ productId;
@@ -117,6 +117,9 @@ router.post('/buyitem', function(req, res, next) {
             })
           }
         })
+
+        // Importante actualizar el credito del comprador aqui, ya que no se accede a la base de datos para obtener el usuario de nuevo.
+        req.session.user.credito = creditoComprador;
     
       }
 
