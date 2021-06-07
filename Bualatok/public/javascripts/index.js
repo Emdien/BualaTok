@@ -5,3 +5,6 @@ var ready = (callback) => {
 ready(() => {
     document.querySelector(".index-header").style.height = window.innerHeight + "px";
 })
+
+
+
