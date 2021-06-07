@@ -32,16 +32,29 @@ router.post('/', function(req, res, next) {
 
     let img_path = 'uploads/' + imagen.name;
 
+    let data = {}; 
+
     conexion.query("INSERT INTO productos (nombre, precio, descripcion, foto, fecha, categoria, estado, visualizaciones, propietario) VALUES (?,?,?,?,?,?,?,?,?)", 
     [nombre, precio, descripcion, img_path, fecha.toDateString(), categoria, estado, visualizaciones, req.session.user.idusuario] ,function(err, results) {
 
       if(!err) {
+        data.user = req.session.user;
+        data.message = 'Producto añadido con exito';
+        data.success = true;
+        req.session.data = data;
+
         console.log("Producto añadido con exito");
         res.redirect('home');
       } else {
         console.log(results);
         console.log("failure");
-        res.redirect('newitem')
+
+        data.user = req.session.user;
+        data.message = 'Error al añadir el producto';
+        data.error = true;
+        req.session.data = data;
+
+        res.redirect('home')
       }
 
     });
