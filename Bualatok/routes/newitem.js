@@ -1,11 +1,16 @@
 var express = require('express');
 var conexion = require('../connection');
 var router = express.Router();
+var values = require('../values.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   if (req.session.loggedin) {
-    res.render('product', req.session.user);
+
+    let data = {}
+    data.user = req.session.user;
+    data.categorias = values.categorias
+    res.render('product', data);
   } else {
     res.redirect('/');
   }

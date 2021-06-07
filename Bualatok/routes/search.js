@@ -2,6 +2,7 @@ var express = require('express');
 var conexion = require('../connection');
 var router = express.Router();
 var fs = require('fs');
+var values = require('../values.json');
 
 router.get('/', function(req, res, next) {
   if (req.session.loggedin) {
@@ -9,7 +10,8 @@ router.get('/', function(req, res, next) {
     let data = req.session.data;
 
     let newData = {
-      user : req.session.user
+      user : req.session.user,
+      categorias : values.categorias
     }
 
 

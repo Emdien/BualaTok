@@ -1,9 +1,14 @@
 var express = require('express');
 var conexion = require('../connection');
 var router = express.Router();
+var values = require('../values.json');
 
 router.get('/', function(req, res, next) {
-      res.render('register');
+
+    let data = {};
+    data.provincias = values.provincias;
+
+    res.render('register', data);
 });
 
 router.post('/', function(req, res, next) {
