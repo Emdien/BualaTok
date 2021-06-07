@@ -118,8 +118,6 @@
 
         <div class="container-fluid mb-3 mt-3 shadow bg-light border-top">
             <div class="container mb-3 mt-3 bg-light search-result">
-
-
                 {{#each productos}}
                    <div class="card_cat mb-2 product-card">
                     <div class="row">
@@ -130,6 +128,7 @@
                             <input type="hidden" id="{{idproducto}}" value="{{nombre}}">
                             
                             <p><strong>{{nombre}} - Precio: {{precio}}€</strong></p>
+                            <p>Visualizaciones: {{visualizaciones}}</p>
                             <p>{{descripcion}}</p>
                         </div>
                     </div>
@@ -144,11 +143,7 @@
                         </div>
                     </div>
                 </div> 
-
                 {{/each}}
-
-
-
             </div>
         </div>
         <form action="/search/buyitem" method="POST">

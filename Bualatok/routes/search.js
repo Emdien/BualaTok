@@ -14,7 +14,9 @@ router.get('/', function(req, res, next) {
 
 
     let productos = [];
-    let query = 'SELECT * FROM productos';
+    let querySelect = 'SELECT * FROM productos';
+    let queryUpdate = 'UPDATE productos SET visualizaciones = visualizaciones + 1';
+    let query = '';
     let first_value = true;
 
     Object.getOwnPropertyNames(req.query).forEach(function(val, index, array) {
@@ -48,27 +50,36 @@ router.get('/', function(req, res, next) {
       }
     })
 
-    query = query.trim();
+    querySelect += query;
+    queryUpdate += query;
+    querySelect = querySelect.trim();
+    queryUpdate = queryUpdate.trim();
 
-    conexion.query(query, function(err, results) {
-      if (results.length) {
+    conexion.query(queryUpdate, function(err, results) {
+      if (err) {
+        console.log(err);
+      }
+    })
+
+    conexion.query(querySelect, function(err, results) {
+      if (!err) {
         for (producto of results){
           productos.push(producto);
         }
 
- 
+        req.session.data = newData;
+
+        if (data == undefined) {
+          newData.productos = productos;
+          res.render('search', newData);
+        } else {
+          data.productos = productos;
+          res.render('search', data);
+        }
       }
     });
 
-    req.session.data = newData;
-
-    if (data == undefined) {
-      newData.productos = productos;
-      res.render('search', newData);
-    } else {
-      data.productos = productos;
-      res.render('search', data);
-    }
+    
     
 
   } else {
