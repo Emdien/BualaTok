@@ -5,6 +5,8 @@ body {
 }
 .navbar {
     background:#71e6f5;
+   /* padding-top: 0;
+    padding-bottom: 5px;*/
 }
 .nav-link,
 .navbar-brand {
@@ -19,6 +21,10 @@ body {
 }
 .navbar-collapse {
     justify-content: flex-end;
+}
+
+.user-dropdown {
+    padding-top: 6px;
 }
 
 
@@ -187,4 +193,14 @@ body {
 .product-card p {
     max-height: 190px;
     overflow: auto;
+}
+
+.navbar-menu {
+    background:#b4f1fa;
+    /*border-color: #2389a3;*/
+    margin-top: 15px;
+}
+
+.navbar-menu a:hover {
+    background: #71cbf5;
 }
