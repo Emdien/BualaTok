@@ -1,3 +1,40 @@
+var peticion_http = null;
+var current_pwd = false;
+
+function checkCurrentPassword() {
+    peticion_http = new XMLHttpRequest();
+    peticion_http.onreadystatechange = comparePasswords;
+    peticion_http.open("GET", "/settings/checkCurrentPassword", true);
+    peticion_http.send();
+}
+
+function comparePasswords() {
+    if (peticion_http.readyState == 4){
+        if (peticion_http.status == 200) {
+            var response = peticion_http.responseText;
+            var resjson = JSON.parse(response);
+
+            console.log(resjson);
+
+            var cpassword = document.getElementById('inputCurrentPassword').value;
+
+            if (resjson.password != cpassword) {
+                document.getElementById('inputCurrentPassword').style.borderColor = 'red';
+                current_pwd = false;
+                document.getElementById('pwd_button').disabled = true;
+            }
+
+            else {
+                document.getElementById('inputCurrentPassword').style.borderColor = 'green';
+                current_pwd = true;
+                document.getElementById('pwd_button').disabled = false;
+            }
+
+           
+        }
+    }
+}
+
 function check() {
     if (document.getElementById('inputPassword').value ==
         document.getElementById('inputRPassword').value) {
@@ -26,6 +63,7 @@ function validation() {
         return false;
     }
 
+    if (!current_pwd) return false;
     return true;
 }
 
@@ -42,6 +80,7 @@ function creditValidation() {
 window.onload = function() {
     var inputPassword = document.getElementById('inputPassword');
     var inputRPassword = document.getElementById('inputRPassword');
+    var inputCPassword = document.getElementById('inputCurrentPassword')
     var registerForm = document.getElementById('registerform');
     var passwordForm = document.getElementById('form-password');
     var creditForm = document.getElementById('form-credito');
@@ -54,7 +93,8 @@ window.onload = function() {
 
     if (passwordForm != null || passwordForm != undefined){
         
-        passwordForm.onsubmit = validation;     
+        passwordForm.onsubmit = validation;  
+        inputCPassword.addEventListener('focusout', checkCurrentPassword);    
         
     }
     
@@ -65,6 +105,8 @@ window.onload = function() {
     }
     inputPassword.addEventListener('keyup', check);
     inputRPassword.addEventListener('keyup', check);
+
+    document.getElementById('pwd_button').disabled = true;
 
     
 }

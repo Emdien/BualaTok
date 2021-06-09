@@ -73,8 +73,6 @@ router.post('/modify-user', function(req, res, next) {
   let username = req.body.username;
   let email = req.body.email;
 
-  // Comprobación de si están vacios se hace en el cliente ??
-
   var data = {
     user : req.session.user,
     message : '',
@@ -158,6 +156,14 @@ router.post('/password', function(req, res, next) {
     }
   })
 
-})
+});
 
+router.get('/checkCurrentPassword', function(req, res, next) {
+  if (req.session.loggedin) {
+    res.json({password : req.session.user.password});
+  } else {
+    res.redirect('/');
+  }
+  
+});
 module.exports = router;
