@@ -14,46 +14,55 @@
     <body>
         <div class="page-header index-header container-fluid text-center">
             <div class="header-dim">
-                <div class="header-description text-light">
-                    <h1>BualaTok</h1>
-                    <p>La web para vender, comprar y cambiar lo que te sobra</p>
-                </div>
+                <div class="header-description">
+                    <div class="row">
+                        <div class="text-light">
+                            <h1>BualaTok</h1>
+                            <p>La web para vender, comprar y cambiar lo que te sobra</p>
+                        </div>
+                    </div>
 
-               
-                <div class="login-form">
-                    <div class="container text-center">
-                        <form method="POST">
-                            <div class="mb-3">
-                              <label for="inputEmail" class="form-label">Email</label>
-                              <input type="email" name="email" class="form-control" id="inputEmail" placeholder="username@email.xyz">
-                            </div>
-                            <div class="mb-3">
-                              <label for="inputPassword" class="form-label">Contraseña</label>
-                              <input type="password" class="form-control" id="inputPassword" name="password">
-                            </div>
-
-                            
-        
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <!--<button type="button" class="btn btn-outline-primary btn-block text-white">Registrarse</button>-->
-                                    <a href="/register" class="btn btn-outline-primary btn-block text-white">Registrarse</a>
-                                </div>
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
-                                </div>
-        
-                            </div>
-
-                          </form>
-
-                          <div class="mb-3">
-                              <p class="text-danger">{{error}}</p>
-                          </div>
+                    <div class="row">
                         
-        
+                        <div class="container text-center text-light">
+                            <form method="POST">
+                                <div class="mb-3">
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="username@email.xyz">
+                                </div>
+                                <div class="mb-3">
+                                <label for="inputPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="inputPassword" name="password">
+                                </div>
+
+                                
+            
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <!--<button type="button" class="btn btn-outline-primary btn-block text-white">Registrarse</button>-->
+                                        <a href="/register" class="btn btn-outline-primary btn-block text-white">Registrarse</a>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    </div>
+            
+                                </div>
+
+                            </form>
+
+                            <div class="mb-3">
+                                <p class="text-danger">{{error}}</p>
+                            </div>
+                            
+            
+                        </div>
+                    
                     </div>
                 </div>
+                
+
+               
+                
 
                 <div class="footer-copyright">
                     <div class="container text-center">
