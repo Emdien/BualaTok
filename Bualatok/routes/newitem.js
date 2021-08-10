@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 
-  console.log("post newitem");
+  
   if (!req.files) {
     console.log("Ha entrado aqui por algun motivo");
     // Algo
@@ -43,16 +43,15 @@ router.post('/', function(req, res, next) {
     [nombre, precio, descripcion, img_path, fecha.toDateString(), categoria, estado, visualizaciones, req.session.user.idusuario] ,function(err, results) {
 
       if(!err) {
+        
         data.user = req.session.user;
         data.message = 'Producto añadido con exito';
         data.success = true;
         req.session.data = data;
 
-        console.log("Producto añadido con exito");
         res.redirect('home');
+
       } else {
-        console.log(results);
-        console.log("failure");
 
         data.user = req.session.user;
         data.message = 'Error al añadir el producto';
@@ -64,8 +63,6 @@ router.post('/', function(req, res, next) {
 
     });
 
-    //req.session.message = "Producto registrado con exito";
-    //res.redirect('home');
   }
 })
 

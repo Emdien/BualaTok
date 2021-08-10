@@ -88,8 +88,6 @@ router.post('/modify-user', function(req, res, next) {
       data.error = true;
 
       req.session.data = data;
-
-      console.log(data);
     
       res.redirect('/settings')
 
@@ -106,8 +104,6 @@ router.post('/modify-user', function(req, res, next) {
           data.success = true;
 
           req.session.data = data;
-
-          console.log(data);
         
           res.redirect('/settings')
   
@@ -147,9 +143,6 @@ router.post('/password', function(req, res, next) {
       req.session.user.password = password;
 
       data.user = req.session.user;
-
-      console.log(data); 
-
       req.session.data = data;
 
       res.redirect('/settings');

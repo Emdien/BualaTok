@@ -11,19 +11,23 @@ router.get('/', function(req, res, next) {
     let query = 'SELECT * FROM productos WHERE propietario = ' + conexion.escape(req.session.user.idusuario);
 
     conexion.query(query, function(err, results) {
-      if (results.length) {
+      if (!err) {
         for (producto of results){
           productos.push(producto);
         }
+
+        
       }
+
+      let data = {
+        user : req.session.user,
+        productos : productos
+      };
+  
+      res.render('productlist', data);
     });
 
-    let data = {
-      user : req.session.user,
-      productos : productos
-    };
-
-    res.render('productlist', data);
+    
   } else {
     res.redirect('/');
   }

@@ -23,12 +23,10 @@ router.post('/', function(req, res, next) {
     conexion.query("INSERT INTO usuarios (nombre, apellidos, username, email, password, provincia, credito) VALUES (?,?,?,?,?,?,?)", 
     [nombre, apellidos, username, email, password, provincia, credito] ,function(err, results) {
         if (!err) {
-            console.log("Cuenta creada con exito");
             res.redirect('/');
         }
         else {
-            console.log(results);
-            console.log("failure");
+            console.log(err);
         }
         
     });

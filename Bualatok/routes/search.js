@@ -104,8 +104,7 @@ router.post('/buyitem', function(req, res, next) {
       let idusuario = req.session.user.idusuario;
       let usercredit = req.session.user.credito;
       if (product.propietario == idusuario) {
-        
-        console.log("El vendedor no puede comprar su producto");
+
         data.user = req.session.user;
         data.message = 'El vendedor no puede comprar su producto';
         data.error = true;
@@ -115,8 +114,7 @@ router.post('/buyitem', function(req, res, next) {
       }
     
       else if (product.precio > usercredit) {
-        
-        console.log("No tiene suficiente credito");
+
         data.user = req.session.user;
         data.message = 'No tiene suficiente crédito';
         data.error = true;
@@ -159,7 +157,6 @@ router.post('/buyitem', function(req, res, next) {
               data.success = true;
 
               req.session.data = data;
-              console.log(req.session.data);
               res.redirect('/search');
             })
           }

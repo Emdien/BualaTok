@@ -14,8 +14,6 @@ function comparePasswords() {
             var response = peticion_http.responseText;
             var resjson = JSON.parse(response);
 
-            console.log(resjson);
-
             var cpassword = document.getElementById('inputCurrentPassword').value;
 
             if (resjson.password != cpassword) {
@@ -50,7 +48,7 @@ function check() {
 function validation() {
     var password = document.getElementById('inputPassword').value;
     var rpassword = document.getElementById('inputRPassword').value;
-
+    var cpassword = document.getElementById('inputCPassword');
     var credito = document.getElementById('inputCredits');
 
     if (credito.value == ''){
@@ -58,12 +56,13 @@ function validation() {
     }
 
     if (password != rpassword) {
-        console.log('ERROR!!!!')
         document.getElementById('error-msg').innerHTML = 'Las contraseñas no coinciden';
         return false;
     }
 
-    if (!current_pwd) return false;
+
+
+    if (cpassword != undefined && !current_pwd) return false;
     return true;
 }
 
@@ -95,6 +94,7 @@ window.onload = function() {
         
         passwordForm.onsubmit = validation;  
         inputCPassword.addEventListener('focusout', checkCurrentPassword);    
+        document.getElementById('pwd_button').disabled = true;
         
     }
     
@@ -106,7 +106,7 @@ window.onload = function() {
     inputPassword.addEventListener('keyup', check);
     inputRPassword.addEventListener('keyup', check);
 
-    document.getElementById('pwd_button').disabled = true;
+    
 
     
 }
